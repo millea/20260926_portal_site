@@ -1,0 +1,14 @@
+{
+  "sources": [
+    {"id":"huggingface","name":"Hugging Face Blog","category":"ai","type":"rss","enabled":true,"url":"https://huggingface.co/blog/feed.xml"},
+    {"id":"google-ai","name":"Google Research","category":"ai","type":"rss","enabled":true,"url":"https://research.google/blog/rss/"},
+    {"id":"llm-benchmarks","name":"LLM比較ニュース（情報源未設定）","category":"llm","type":"rss","enabled":false,"url":""},
+    {"id":"tokyo-weather","name":"東京都心 · Open-Meteo","category":"weather","type":"weather","enabled":true,"location":"東京都心","latitude":35.6812,"longitude":139.7671},
+    {"id":"chiba-weather","name":"千葉市 · Open-Meteo","category":"weather","type":"weather","enabled":true,"location":"千葉市","latitude":35.6074,"longitude":140.1065},
+    {"id":"investment-rss","name":"投資ニュース（情報源未設定）","category":"investment","type":"rss","enabled":false,"url":""},
+    {"id":"games-rss","name":"ゲーム（タイトル未設定）","category":"games","type":"rss","enabled":false,"url":""},
+    {"id":"events-rss","name":"イベント（情報源未設定）","category":"events","type":"rss","enabled":false,"url":""},
+    {"id":"kids-rss","name":"子育て・教育（情報源未設定）","category":"kids","type":"rss","enabled":false,"url":""},
+    {"id":"bluesky","name":"Bluesky（収集先未設定）","category":"ai","type":"bluesky","enabled":false,"actor":""}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {"id":"ai","label":"AI情報","icon":"sparkles","color":"violet","description":"AIの進化と、新しい可能性をチェック。"},
+    {"id":"llm","label":"LLM性能比較","icon":"chart","color":"violet","description":"モデルの性能を、評価のものさしと一緒に確認。"},
+    {"id":"investment","label":"投資","icon":"chart","color":"green","description":"日本とアメリカの市場を、自分のペースで。"},
+    {"id":"weather","label":"天気","icon":"sun","color":"amber","description":"東京都心・千葉市の空模様と、これからの予報。"},
+    {"id":"games","label":"ゲーム","icon":"game","color":"blue","description":"好きなゲームの、新しい話題を。"},
+    {"id":"events","label":"イベント","icon":"calendar","color":"orange","description":"気になる催しを見つけて、次の楽しみに。"},
+    {"id":"kids","label":"子供","icon":"heart","color":"rose","description":"子育てと学びに役立つ、身近な情報。"}
+  ],
+  "benchmarks": [
+    {"name":"Artificial Analysis","symbol":"推論性能・価格・出力速度","url":"https://artificialanalysis.ai/leaderboards/models"},
+    {"name":"Arena","symbol":"ユーザーによる対話評価","url":"https://arena.ai/leaderboard"},
+    {"name":"SWE-bench","symbol":"ソフトウェア課題の解決性能","url":"https://www.swebench.com/"}
+  ],
+  "watchlist": [
+    {"name":"日経平均","symbol":"NIKKEI 225","url":"https://indexes.nikkei.co.jp/nkave"},
+    {"name":"TOPIX","symbol":"JPX","url":"https://www.jpx.co.jp/markets/indices/topix/"},
+    {"name":"S&P 500","symbol":"SPX","url":"https://www.spglobal.com/spdji/en/indices/equity/sp-500/"},
+    {"name":"NASDAQ総合","symbol":"COMP","url":"https://www.nasdaq.com/market-activity/index/comp"},
+    {"name":"NYダウ","symbol":"DJIA","url":"https://www.spglobal.com/spdji/en/indices/equity/dow-jones-industrial-average/"},
+    {"name":"トヨタ自動車","symbol":"7203 · JP","url":"https://finance.yahoo.co.jp/quote/7203.T"},
+    {"name":"ソニーグループ","symbol":"6758 · JP","url":"https://finance.yahoo.co.jp/quote/6758.T"},
+    {"name":"三菱UFJ FG","symbol":"8306 · JP","url":"https://finance.yahoo.co.jp/quote/8306.T"},
+    {"name":"Apple","symbol":"AAPL · US","url":"https://www.nasdaq.com/market-activity/stocks/aapl"},
+    {"name":"Microsoft","symbol":"MSFT · US","url":"https://www.nasdaq.com/market-activity/stocks/msft"},
+    {"name":"NVIDIA","symbol":"NVDA · US","url":"https://www.nasdaq.com/market-activity/stocks/nvda"}
+  ]
+}

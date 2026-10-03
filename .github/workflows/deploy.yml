@@ -1,0 +1,37 @@
+name: Deploy Firebase
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: firebase-deployment
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - run: npm ci
+      - run: npm test
+      - run: npm run test:rules
+      - run: npm run build
+        env:
+          VITE_FIREBASE_CONFIG: '${{ vars.FIREBASE_WEB_CONFIG }}'
+      - name: Authenticate for deployment
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.FIREBASE_DEPLOY_SERVICE_ACCOUNT }}'
+          project_id: '${{ vars.FIREBASE_PROJECT_ID }}'
+      - name: Deploy Hosting and rules
+        run: npx firebase deploy --only hosting,firestore:rules --project "$FIREBASE_PROJECT_ID" --non-interactive
+        env:
+          FIREBASE_PROJECT_ID: '${{ vars.FIREBASE_PROJECT_ID }}'

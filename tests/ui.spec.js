@@ -1,0 +1,46 @@
+import {test,expect} from '@playwright/test';
+const fixture={sources:[{id:'test',name:'テスト情報源',category:'ai',type:'rss',status:'ok',lastSuccessAt:'2026-10-03T00:00:00Z',items:[{id:'one',sourceId:'test',source:'テスト情報源',category:'ai',title:'テスト記事 Alpha',summary:'画面の操作検証用データ',url:'https://example.com/a',publishedAt:'2026-10-03T00:00:00Z'},{id:'two',sourceId:'test',source:'テスト情報源',category:'ai',title:'テスト記事 Beta',summary:'検証用の記事',url:'https://example.com/b',publishedAt:'2026-10-02T00:00:00Z'}]}]};
+test('category, search, read, bookmark persistence and dialog',async({page})=>{
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.route('**/data/local-feed.json',route=>route.fulfill({json:fixture}));
+  await page.goto('/');
+  await expect(page.locator('.article')).toHaveCount(2);
+  await expect(page.locator('#navigation a')).toHaveCount(8);
+  await page.getByRole('searchbox').fill('Alpha');
+  await expect(page.locator('.article')).toHaveCount(1);
+  await page.getByRole('button',{name:'テスト記事 Alphaの保存を追加'}).click();
+  await page.getByRole('button',{name:'テスト記事 Alphaを既読にする'}).click();
+  await page.reload();
+  await expect(page.getByRole('button',{name:'テスト記事 Alphaの保存を解除'})).toHaveAttribute('aria-pressed','true');
+  await page.getByRole('button',{name:'未読',exact:true}).click();
+  await expect(page.locator('.article')).toHaveCount(1);
+  await expect(page.locator('.article')).toContainText('Beta');
+  await page.locator('#navigation a[href="#llm"]').click();
+  await expect(page.getByRole('heading',{name:'LLM性能比較',exact:true})).toBeVisible();
+  await expect(page.getByRole('link',{name:/Artificial Analysis/})).toBeVisible();
+  await page.locator('#navigation a[href="#investment"]').click();
+  await expect(page.getByRole('link',{name:/日経平均/})).toBeVisible();
+  await page.locator('#settings-open').click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  expect(errors).toEqual([]);
+});
+test('mobile menu, navigation and overflow',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.route('**/data/local-feed.json',route=>route.fulfill({json:fixture}));
+  await page.goto('/');
+  await expect(page.locator('.article')).toHaveCount(2);
+  await page.getByRole('button',{name:'メニューを開閉'}).click();
+  await page.locator('#navigation a[href="#weather"]').click();
+  await expect(page.getByRole('heading',{name:'天気',exact:true})).toBeVisible();
+  await expect(page.locator('#menu-toggle')).toHaveAttribute('aria-expanded','false');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.screenshot({path:'artifacts/mobile.png',fullPage:true,animations:'disabled'});
+});
+test('actual local feed renders at desktop size',async({page})=>{
+  await page.goto('/');
+  await expect(page.locator('.article').first()).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.screenshot({path:'artifacts/dashboard.png',fullPage:false});
+});

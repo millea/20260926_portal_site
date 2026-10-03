@@ -1,105 +1,31 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f2f0e9" />
-    <meta name="description" content="ブランドのまだ見ぬ景色を設計する、東京の独立系クリエイティブスタジオ YOHAAKU。" />
-    <title>YOHAAKU® — Creative Studio Tokyo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Noto+Sans+JP:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="noise" aria-hidden="true"></div>
-    <div class="cursor" aria-hidden="true"><span>VIEW</span></div>
-
-    <header class="site-header">
-      <a class="logo" href="#top" aria-label="YOHAAKU ホーム">YH<span>®</span></a>
-      <div class="header-meta"><i></i><span>AVAILABLE FOR PROJECTS</span></div>
-      <nav aria-label="メインナビゲーション">
-        <a href="#work">WORK</a><a href="#studio">STUDIO</a><a href="#contact">CONTACT</a>
-      </nav>
-      <button class="theme-button" type="button" aria-label="カラーテーマを切り替える"><span>●</span> MODE</button>
-      <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
-    </header>
-
-    <main id="top">
-      <section class="hero">
-        <div class="hero-orbit" aria-hidden="true"><div class="orbital-type">IDEAS&nbsp; IN&nbsp; MOTION&nbsp; —&nbsp; TOKYO&nbsp; 2026&nbsp; —&nbsp; </div></div>
-        <p class="hero-kicker reveal">INDEPENDENT CREATIVE STUDIO / TOKYO</p>
-        <h1 class="reveal"><span>余白から、</span><br /><em>まだない景色を。</em></h1>
-        <div class="hero-bottom reveal">
-          <p>戦略から表現まで。ブランドの輪郭を研ぎ澄まし、<br />人と未来を動かす体験をデザインします。</p>
-          <a href="#work" class="round-link" aria-label="制作実績を見る"><span>EXPLORE<br />OUR WORK</span><b>↓</b></a>
-        </div>
-        <div class="hero-stamp">SCROLL TO<br />DISCOVER <span>↘</span></div>
-      </section>
-
-      <section class="manifesto" id="studio">
-        <p class="section-index">01 / PHILOSOPHY</p>
-        <div class="manifesto-copy reveal-text">正解をつくるのではなく、<br /><span>問いを美しくする。</span></div>
-        <div class="manifesto-note">
-          <p>YOHAAKUは、東京を拠点に活動する独立系クリエイティブスタジオです。</p>
-          <p>観察し、対話し、遊ぶ。見過ごされていた価値に光を当て、ブランドと人のあいだに新しい関係をつくります。</p>
-        </div>
-      </section>
-
-      <section class="work" id="work">
-        <div class="work-head">
-          <p class="section-index">02 / SELECTED WORK</p>
-          <h2>Recent<br /><i>Projects</i><sup>(04)</sup></h2>
-          <div class="filters" role="group" aria-label="実績の絞り込み">
-            <button class="active" data-filter="all">ALL</button><button data-filter="brand">BRAND</button><button data-filter="digital">DIGITAL</button>
-          </div>
-        </div>
-        <div class="project-grid">
-          <article class="project project-large interactive" data-category="brand" tabindex="0" data-project="nagi">
-            <div class="project-visual visual-nagi"><div class="nagi-mark">凪<span>NAGI</span></div><div class="project-year">2026</div></div>
-            <div class="project-info"><h3>NAGI HOUSE</h3><p>BRAND STRATEGY / IDENTITY</p><span>01</span></div>
-          </article>
-          <article class="project interactive" data-category="digital" tabindex="0" data-project="aura">
-            <div class="project-visual visual-aura"><div class="aura-sphere"></div><p>AURA<br />OBJECTS</p><small>FORM FOLLOWS FEELING</small></div>
-            <div class="project-info"><h3>AURA OBJECTS</h3><p>WEB / ART DIRECTION</p><span>02</span></div>
-          </article>
-          <article class="project interactive" data-category="brand" tabindex="0" data-project="soil">
-            <div class="project-visual visual-soil"><div class="soil-label">SOIL<small>BOTANICAL LABORATORY</small></div><div class="leaf leaf-a"></div><div class="leaf leaf-b"></div></div>
-            <div class="project-info"><h3>SOIL LAB</h3><p>IDENTITY / PACKAGING</p><span>03</span></div>
-          </article>
-          <article class="project project-wide interactive" data-category="digital" tabindex="0" data-project="ma">
-            <div class="project-visual visual-ma"><div class="ma-word">間</div><div class="ma-lines"></div><p>BETWEEN<br />SOUND &amp; SILENCE</p></div>
-            <div class="project-info"><h3>MA — DIGITAL ARCHIVE</h3><p>DIGITAL EXPERIENCE / DEVELOPMENT</p><span>04</span></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="capabilities">
-        <p class="section-index">03 / CAPABILITIES</p>
-        <div class="cap-list">
-          <div><span>01</span><h3>Strategy &amp; Direction</h3><p>リサーチ / 戦略設計 / コンセプト開発</p></div>
-          <div><span>02</span><h3>Identity &amp; Design</h3><p>VI / グラフィック / パッケージ</p></div>
-          <div><span>03</span><h3>Digital Experience</h3><p>WEB / UI・UX / インタラクション</p></div>
-        </div>
-      </section>
-
-      <section class="ticker" aria-label="スタジオの理念"><div>CURIOUS MINDS&nbsp; ✦ &nbsp;CLEAR IDEAS&nbsp; ✦ &nbsp;BEAUTIFUL IMPACT&nbsp; ✦ &nbsp;CURIOUS MINDS&nbsp; ✦ &nbsp;CLEAR IDEAS&nbsp; ✦ &nbsp;BEAUTIFUL IMPACT&nbsp; ✦ &nbsp;</div></section>
-
-      <section class="contact" id="contact">
-        <div class="contact-top"><p class="section-index">04 / START A PROJECT</p><p>TOKYO <span id="clock">00:00:00</span></p></div>
-        <h2>いい違和感から、<br /><i>はじめよう。</i></h2>
-        <a href="mailto:hello@yohaaku.jp?subject=Project inquiry" class="contact-link">hello@yohaaku.jp <span>↗</span></a>
-        <p class="contact-note">プロジェクトのご相談、コラボレーション、<br />小さなアイデアも歓迎します。</p>
-      </section>
-    </main>
-
-    <footer><a class="logo" href="#top">YH<span>®</span></a><p>© 2026 YOHAAKU STUDIO</p><div><a href="#top">BACK TO TOP ↑</a><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">INSTAGRAM ↗</a></div></footer>
-
-    <dialog class="project-modal">
-      <button class="modal-close" aria-label="閉じる">CLOSE ×</button>
-      <p class="modal-index">CASE STUDY / <span>01</span></p><h2></h2><p class="modal-copy"></p>
-      <div class="modal-meta"><span>ROLE</span><b></b><span>YEAR</span><b>2026</b></div>
-    </dialog>
-    <script src="script.js"></script>
-  </body>
-</html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#176b60"><meta name="description" content="気になる情報を、ひとつの場所に。個人用情報ポータル MATO。"><title>MATO — ダッシュボード</title><link rel="stylesheet" href="/styles.css"><script type="module" src="/script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="#dashboard"><span class="brand-mark" aria-hidden="true">m</span><span>MATO<small>PERSONAL HUB</small></span></a>
+<div class="workspace"><span class="avatar">M</span><div>マイワークスペース<small>自分のための情報ライブラリ</small></div><span class="live-dot"></span></div>
+<p class="nav-label">ワークスペース</p><nav id="navigation" aria-label="メインナビゲーション"></nav>
+<div class="sidebar-bottom"><div class="sidebar-note"><span class="live-dot"></span>つながる、毎日の関心。<p>必要な情報だけを、<br>ひとつの場所に。</p></div><button class="settings-button" id="settings-open"><span data-icon="settings"></span>収集設定<span class="arrow">↗</span></button><div class="sidebar-footer">MATO <span>YOUR DAILY PERSPECTIVE</span></div></div>
+</aside>
+<div class="sidebar-backdrop" id="backdrop" hidden></div>
+<div class="app-shell">
+<header class="topbar"><button class="icon-button menu-toggle" id="menu-toggle" aria-label="メニューを開閉" aria-controls="sidebar" aria-expanded="false"><span data-icon="menu"></span></button><div class="breadcrumb">ワークスペース<span>/</span><strong id="breadcrumb-current">ダッシュボード</strong></div><label class="global-search"><span data-icon="search"></span><input type="search" id="search" placeholder="気になる情報を検索" aria-label="記事を検索"><kbd>/</kbd></label><button class="icon-button" id="refresh" title="データを再読込" aria-label="データを再読込"><span data-icon="refresh"></span></button><button id="auth-button" class="auth-button">接続準備中</button></header>
+<main id="main" tabindex="-1">
+<div class="page-heading"><div><div class="eyebrow" id="today"></div><h1 id="page-title">ダッシュボード</h1><p id="page-description">気になる情報を、ひとつの場所に。</p></div><span class="date-chip"><span class="live-dot"></span>PERSONAL OVERVIEW</span></div>
+<div id="notice" class="notice" role="status" hidden></div>
+<section id="auth-gate" class="auth-gate" hidden><span data-icon="lock"></span><h2 id="gate-title">自分だけの情報スペースへ。</h2><p id="gate-message">Googleアカウントでログインすると、情報の閲覧と保存ができます。</p><button id="gate-login" class="primary-button">Googleでログイン</button></section>
+<div id="workspace-content">
+<section class="stats" aria-label="情報の集計" id="stats"></section>
+<section class="watchlist" id="watchlist" aria-label="日米の主要指数・主要株" hidden></section>
+<div class="content-grid">
+<section class="feed-panel" aria-labelledby="feed-title"><div class="panel-heading"><div><span class="section-kicker">YOUR FEED</span><h2 id="feed-title">最新の情報<span id="result-count" class="count-pill">0</span></h2></div><label class="sort-label"><span data-icon="sort"></span><select id="sort" aria-label="記事の並び順"><option value="newest">新しい順</option><option value="oldest">古い順</option></select></label></div><div class="filter-bar"><div class="filters" role="group" aria-label="記事の絞り込み"><button data-filter="all" class="active" aria-pressed="true">すべて</button><button data-filter="unread" aria-pressed="false">未読</button><button data-filter="saved" aria-pressed="false">保存済み</button></div><span id="filter-caption">すべてのカテゴリ</span></div><div id="article-list" aria-live="polite"><div class="empty-state">情報を読み込んでいます…</div></div><div class="feed-footer"><span class="live-dot"></span><span id="feed-footer-text">情報を読み込んでいます</span></div></section>
+<aside class="right-column" aria-label="情報の概要"><section class="intro-card"><div class="intro-top"><span>MAKE ROOM FOR CURIOSITY</span><span data-icon="sparkles"></span></div><h2>知りたいことに、<br>すぐ手が届く。</h2><p>ニュースも、暮らしも、好きなことも。<br>あなたの関心をここに集めよう。</p><button id="intro-settings">情報源を確認する <span>→</span></button></section><section class="side-panel"><div class="side-heading"><h2>関心のあるカテゴリ</h2><span id="topic-count">6 TOPICS</span></div><div id="category-overview"></div></section><section class="side-panel sync-panel"><div class="side-heading"><h2>収集ステータス</h2><span data-icon="activity"></span></div><div id="sync-summary"></div><button id="sync-details" class="text-button">情報源ごとの状態を見る <span>↗</span></button></section><p class="local-note"><span data-icon="lock"></span><span id="storage-note">本人だけの情報スペース</span></p></aside>
+</div></div>
+<footer class="page-footer"><span>MATO / 自分のための情報ポータル</span><span>表示時刻：日本標準時（JST）</span></footer>
+</main></div>
+<dialog id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-header"><div><span class="section-kicker">SOURCES & SYNC</span><h2 id="settings-title">収集設定</h2></div><button id="settings-close" class="icon-button" aria-label="収集設定を閉じる"><span data-icon="close"></span></button></div><p class="dialog-intro">情報源は <code>config/sources.json</code>、カテゴリは <code>config/portal.json</code> で管理します。定期収集は6時間ごと。画面の再読込では収集処理は実行されません。</p><div id="source-list"></div><div class="setup-guide"><h3>自分の関心に合わせる</h3><p>RSS / Atom、Blueskyの公開投稿、東京都心・千葉市の天気に対応。SNSアカウントは不要です。カテゴリを追加するとナビゲーションも自動的に増えます。</p><p>ゲーム・イベント・子供カテゴリの情報源は未設定です。追加手順はREADMEをご覧ください。</p></div></dialog>
+</body></html>

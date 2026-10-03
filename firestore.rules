@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function permitted() {
+      return request.auth != null &&
+        exists(/databases/$(database)/documents/access/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/access/$(request.auth.uid)).data.enabled == true;
+    }
+    match /access/{uid} {
+      allow get: if request.auth != null && request.auth.uid == uid;
+      allow list, write: if false;
+    }
+    match /feeds/{sourceId} {
+      allow read: if permitted();
+      allow write: if false;
+    }
+    match /users/{uid}/items/{itemId} {
+      allow read, delete: if permitted() && request.auth.uid == uid;
+      allow create, update: if permitted() && request.auth.uid == uid &&
+        request.resource.data.keys().hasOnly(['read', 'saved', 'updatedAt']) &&
+        request.resource.data.keys().hasAll(['updatedAt']) &&
+        request.resource.data.get('read', false) is bool &&
+        request.resource.data.get('saved', false) is bool &&
+        request.resource.data.updatedAt == request.time;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}
