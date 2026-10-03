@@ -6,6 +6,22 @@ AI情報・LLM性能比較・投資・天気・ゲーム・イベント・子供
 
 `specifications.md` → `design.md` → `task.md` の順で作成・更新し、その後に実装します。次回の作業ルールは `AGENTS.md` を参照してください。
 
+## CodexからGitHubを使う
+
+CodexでGitHubのリポジトリ・Issue・Pull Requestを扱う場合は、GitHub公式MCPをCodex共通設定に登録します。通常の設定ファイルは`%USERPROFILE%\.codex\config.toml`です。公式の現行手順は[GitHub MCP ServerのCodexインストールガイド](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-codex.md)を参照してください。
+
+リモートサーバー設定の形は次のとおりです。PATは環境変数に保存し、設定ファイルやリポジトリに値を直接書かないでください。
+
+```toml
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+bearer_token_env_var = "GITHUB_PAT_TOKEN"
+```
+
+PATは利用目的に応じて対象リポジトリと権限を絞ります。閲覧だけなら必要な機能の読み取り権限から始め、書き込みは必要になった場合にのみ追加してください。MCPサーバーの登録確認とGitHubへの認証・権限確認は別です。`codex mcp list`で登録を見た後、対象リポジトリの読み取り操作を行って確認します。PATの具体的な権限はGitHub側の現在の選択肢と公式ガイドに従い、権限不足が確認されたときだけ追加します。トークンをチャット、文書、ログへ貼らないでください。
+
+このMCPは開発者のCodex環境用であり、ポータルサイトの利用者認証や実行時機能ではありません。`service_tier`はCodexの処理方式の設定で、GitHub MCPの権限設定とは無関係です。
+
 ## ローカルで画面を確認
 
 Node.js 22以上、Python 3.12以上を用意します。
