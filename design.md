@@ -34,5 +34,8 @@ deploy.yml: 手動実行。npm ci、テスト、Firebase設定を環境変数か
 ## 認証と運用
 Web設定はVITE_FIREBASE_CONFIGのJSON。Web APIキーは公開識別情報だがデータの保護はSecurity Rulesと許可リストで行う。専用サービスアカウントのJSONはGitHub Secret FIREBASE_COLLECTOR_SERVICE_ACCOUNTとFIREBASE_DEPLOY_SERVICE_ACCOUNT、プロジェクトIDはVariable FIREBASE_PROJECT_ID、Web設定はVariable FIREBASE_WEB_CONFIG。初期設定でGoogleログインを有効化し、所有者のUIDを許可リストに登録する。サービスアカウントは収集用とデプロイ用を分離する。
 
+### 開発者のGitHub MCP
+GitHub公式リモートMCPをCodex共通設定（通常は`%USERPROFILE%\.codex\config.toml`）に登録する。接続先は`https://api.githubcopilot.com/mcp/`、認証情報はユーザー環境変数から読み込ませ、リポジトリ内には保存しない。MCP登録一覧で有効状態を確認後、対象リポジトリのIssue一覧など必要な読み取り操作を実行してアクセスを確認する。PATは対象リポジトリ・操作に必要な最小権限とし、具体的な権限名はGitHubの現在のPAT設定画面と公式MCPガイドで確認する。GitHub MCPは本サイトの実行時アーキテクチャには含まれない。
+
 ## 検証
 Python unittestで解析と障害耐性。node:testでUIのフィルタ・URL検証など純粋ロジック。Firestore Emulatorのルールテストで未認証・未許可・本人・他人・改ざんを検証。実プロジェクトが未提供の場合、本番ログイン・Firestore・公開は未検証として明記する。
