@@ -6,6 +6,14 @@ AI情報・LLM性能比較・投資・天気・ゲーム・イベント・子供
 
 `specifications.md` → `design.md` → `task.md` の順で作成・更新し、その後に実装します。次回の作業ルールは `AGENTS.md` を参照してください。
 
+## Issueを起点に開発する
+
+機能追加・不具合修正・調査・運用設定には、[作業用Issueテンプレート](.github/ISSUE_TEMPLATE/work.yml)を使います。既存Issueを確認し、1つの成果を確認できる単位で作成してください。
+
+フォームは目的、作業範囲、完了条件、検証方法を必須項目として定義しています。依存するIssue・外部設定・未確認の要件は、任意項目の「依存・未決事項」に記載します。完了条件はチェックリストにし、必要なドキュメント更新と検証結果の記録も含めてください。
+
+テンプレートがデフォルトブランチに反映された後、GitHubのIssues → New issueで「作業・機能改善」を選択して利用します。GitHub MCPなどからIssueを作成する場合も、テンプレートの5項目に沿って本文を記載してください。
+
 ## CodexからGitHubを使う
 
 CodexでGitHubのリポジトリ・Issue・Pull Requestを扱う場合は、GitHub公式MCPをCodex共通設定に登録します。通常の設定ファイルは`%USERPROFILE%\.codex\config.toml`です。公式の現行手順は[GitHub MCP ServerのCodexインストールガイド](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-codex.md)を参照してください。

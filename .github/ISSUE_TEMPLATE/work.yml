@@ -1,0 +1,61 @@
+name: 作業・機能改善
+description: 機能追加、不具合修正、調査、運用設定の目的と完了条件を整理します。
+body:
+  - type: markdown
+    attributes:
+      value: |
+        既存のIssueを確認し、1つの成果を確認できる単位で作成してください。
+        未確認の要件は「依存・未決事項」に記載し、必要な仕様・設計・作業リストの更新と検証も作業に含めてください。
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 目的
+      description: 誰が何をできるようになるか、解決したい課題を記載してください。
+      placeholder: |
+        現状の課題：
+        このIssueで実現したいこと：
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 作業範囲
+      description: 今回変更・調査する内容と対象を記載してください。不具合の場合は再現手順と発生環境も含めてください。
+      placeholder: |
+        - 変更・調査する内容：
+        - 対象の画面・設定・ファイル：
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 完了条件
+      description: 完了を判断できる具体的な条件を、Markdownのチェックリストで記載してください。
+      placeholder: |
+        - [ ] 具体的な操作・結果を確認できる
+        - [ ] 必要なドキュメントが更新されている
+        - [ ] 検証結果と未検証事項が記録されている
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: 検証方法
+      description: 実行するテスト、確認する操作、期待する結果を記載してください。認可変更時はnpm run test:rulesも実行します。
+      placeholder: |
+        - npm test
+        - python -m unittest discover -s tests -p 'test_*.py'
+        - 変更に応じた確認操作と期待結果：
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依存・未決事項
+      description: 先行Issue、必要な外部設定、確認が必要な要件を記載してください。
+      placeholder: |
+        - 先行Issue：#番号
+        - 必要な設定・準備：
+        - 確認が必要な要件：
+    validations:
+      required: false

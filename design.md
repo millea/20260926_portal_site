@@ -37,5 +37,10 @@ Web設定はVITE_FIREBASE_CONFIGのJSON。Web APIキーは公開識別情報だ�
 ### 開発者のGitHub MCP
 GitHub公式リモートMCPをCodex共通設定（通常は`%USERPROFILE%\.codex\config.toml`）に登録する。接続先は`https://api.githubcopilot.com/mcp/`、認証情報はユーザー環境変数から読み込ませ、リポジトリ内には保存しない。MCP登録一覧で有効状態を確認後、対象リポジトリのIssue一覧など必要な読み取り操作を実行してアクセスを確認する。PATは対象リポジトリ・操作に必要な最小権限とし、具体的な権限名はGitHubの現在のPAT設定画面と公式MCPガイドで確認する。GitHub MCPは本サイトの実行時アーキテクチャには含まれない。
 
+### Issueテンプレート
+`.github/ISSUE_TEMPLATE/work.yml` にGitHub Issue Forms形式の共通テンプレートを置く。目的、作業範囲、完了条件、検証方法は必須のtextarea、依存・未決事項は任意のtextareaとして定義する。完了条件はMarkdownのチェックリストで記載するよう案内し、検証方法には実行コマンド・確認操作・期待結果を記載する。
+
+目的と作業範囲には不具合の発生状況や調査対象も記載できる。未確認の要件と外部設定は依存・未決事項で明示する。入力例はplaceholderに置き、未編集の例文がIssue本文として送信されないようにする。READMEからテンプレートへリンクし、既存Issueを確認してから作成する手順を案内する。
+
 ## 検証
 Python unittestで解析と障害耐性。node:testでUIのフィルタ・URL検証など純粋ロジック。Firestore Emulatorのルールテストで未認証・未許可・本人・他人・改ざんを検証。実プロジェクトが未提供の場合、本番ログイン・Firestore・公開は未検証として明記する。
