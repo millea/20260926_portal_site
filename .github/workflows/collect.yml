@@ -1,7 +1,9 @@
 name: Collect public information
 on:
-  schedule:
-    - cron: '17 */6 * * *'
+  # Temporarily paused until Firebase credentials are configured.
+  # Restore these lines to resume scheduled collection:
+  # schedule:
+  #   - cron: '17 */6 * * *'
   workflow_dispatch:
 permissions:
   contents: read
